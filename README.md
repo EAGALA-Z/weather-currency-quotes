@@ -133,9 +133,25 @@ Open your browser and go to the printed local URL (e.g. http://localhost:5173
 The frontend automatically connects to the backend (http://localhost:3001
 ).
 
+
 | Key                   | Description                | Example     |
 | --------------------- | -------------------------- | ----------- |
 | `OPENWEATHER_API_KEY` | API key for OpenWeatherMap | `abc123xyz` |
 | `PORT`                | Backend server port        | `3001`      |
 
+
+---
+
+## 🖼️ Preview
+
+### Weather Page
+![Weather Screenshot](client/public/weather.png)
+
+### Currency Converter
+![Currency Screenshot](client/public/currency.png)
+
+### Quote Generator
+![Quote Screenshot](client/public/quotes.png)
+
+---
 
