@@ -155,3 +155,6 @@ The frontend automatically connects to the backend (http://localhost:3001
 
 ---
 
+
+🎥 Demo Video: [Watch here](https://drive.google.com/file/d/1hewWPcX-kCjjxRhI8ZXKBvV3NgLLoh-s/view?usp=sharing)
+
