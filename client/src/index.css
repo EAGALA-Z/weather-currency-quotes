@@ -1,0 +1,340 @@
+:root {
+  --text: #f3f8ff;
+  --muted: rgba(255, 255, 255, 0.6);
+  --accent: #06b6d4;
+  --glass: rgba(255, 255, 255, 0.1);
+  --border: rgba(255, 255, 255, 0.08);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --transition: 0.3s ease;
+}
+
+/* ---------- Reset ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #050b1b;
+  color: var(--text);
+}
+
+/* ---------- Layout ---------- */
+.app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+}
+
+/* ---------- Navbar ---------- */
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav-btn {
+  color: var(--text);
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+  font-weight: 600;
+  box-shadow: var(--shadow);
+}
+
+.nav-btn:hover {
+  background: rgba(6, 182, 212, 0.2);
+  transform: translateY(-3px);
+}
+
+.nav-btn.active {
+  background: var(--accent);
+  color: #021018;
+  font-weight: 700;
+}
+
+/* ---------- Common ---------- */
+.page {
+  flex: 1;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-image 0.6s ease-in-out;
+}
+
+.card-large {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+.centered-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.error {
+  color: #ff8a8a;
+  margin-top: 12px;
+  font-size: 0.9rem;
+}
+
+/* ---------- Weather Page ---------- */
+.weather-page {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 18px;
+  padding: 32px;
+}
+
+.search-top {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  width: 240px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary {
+  background: var(--accent);
+  border: none;
+  color: #021018;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
+}
+
+.city-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.temp-large {
+  font-size: 3rem;
+  margin: 10px 0;
+}
+
+.condition {
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+
+/* ---------- Currency Page ---------- */
+.currency-page {
+  min-height: 100vh;
+  width: 100%;
+  background: url('/src/assets/currency.jpg') center/cover fixed no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeBg 8s ease-in-out infinite alternate;
+}
+
+.currency-card {
+  width: 100%;
+  max-width: 450px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 18px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  box-shadow: var(--shadow);
+  animation: cardSlideUp 0.8s ease;
+}
+
+.currency-card h2 {
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.currency-card input,
+.currency-card select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  width: 100px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.currency-card span {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* ---------- Quotes Page ---------- */
+.quote-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  transition: background-image 1s ease-in-out;
+  padding: 30px;
+}
+
+.quote-card {
+  max-width: 700px;
+  padding: 32px;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  text-align: center;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.8s ease;
+}
+
+.quote-text {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  font-weight: 500;
+  animation: textFade 0.6s ease;
+}
+
+.quote-author {
+  margin-top: 10px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.quote-card .btn-primary {
+  margin-top: 20px;
+  animation: fadeIn 0.8s ease;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeBg {
+  from {
+    background-size: 100%;
+    filter: brightness(0.9);
+  }
+  to {
+    background-size: 105%;
+    filter: brightness(1);
+  }
+}
+
+@keyframes cardSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .currency-card,
+  .quote-card,
+  .card-large {
+    width: 95%;
+    padding: 22px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+  }
+}
